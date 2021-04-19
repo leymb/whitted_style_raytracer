@@ -1,0 +1,139 @@
+head     1.232976;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.232976
+date     2021.01.27.16.59.27;  author p4;  state Exp;
+branches ;
+next     1.232631;
+
+1.232631
+date     2021.01.26.16.27.41;  author p4;  state Exp;
+branches ;
+next     1.232628;
+
+1.232628
+date     2021.01.26.16.25.00;  author p4;  state Exp;
+branches ;
+next     1.231282;
+
+1.231282
+date     2021.01.22.16.35.13;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.232976
+log
+@@
+text
+@#include "precomp.h"
+#include "scenes/testscene.h"
+
+testscene::testscene() : scene()
+{
+
+	
+	m_prPrimitives[0] = new plane{ vec3(0.f, -1.5f, 0.f), vec3(0.f,1.f,0.f), 1.5f };
+	
+	m_prPrimitives[1] = new sphere{ vec3(0.f, 0.f, -3.f), 1.0f };
+	m_prPrimitives[1]->m_maObjectMaterial = { {1.f,0.f,1.f}, 0.7f, 1.5f };
+	
+	m_prPrimitives[2] = new sphere{ vec3(2.f, -0.5f,-5.f), 1.f };
+	m_prPrimitives[2]->m_maObjectMaterial = { {1.f,0.f,0.f}, 0.5f, 1.5f };
+
+	m_prPrimitives[3] = new sphere{ vec3(-2.5f, 3.f,-8.f), 1.f };
+	m_prPrimitives[3]->m_maObjectMaterial = { {1.f,1.f,0.f}, 1.0f, 1.5f };
+
+	m_prPrimitives[4] = new sphere{ vec3(0.5f, -1.1f,-2.5f), 0.2f };
+	m_prPrimitives[4]->m_maObjectMaterial = { {1.f,1.f,0.f}, 0.0f, 1.5f };
+
+	m_prPrimitives[5] = new plane{{0.f,0.f,0.f}, {0.5f,1.f,0.f}, 2};
+	m_prPrimitives[5]->m_maObjectMaterial = { {}, 0.5f, 1.5f };
+
+	m_iPrimitiveCounter = 6;
+
+	m_lsLight = {{4.0f, 10.f, 3.0f}, {}, {200.f,200.f,200.f} };
+}
+@
+
+
+1.232631
+log
+@@
+text
+@d8 1
+a8 1
+	m_prPrimitives[0] = new plane{ vec3(0, -1.5, 0), vec3(0,1,0), 1.5 };
+d10 2
+a11 2
+	m_prPrimitives[1] = new sphere{ vec3(0, 0, -3), 1.0f };
+	m_prPrimitives[1]->m_maObjectMaterial = { {1,0,1}, 0.7, 1.5 };
+d13 2
+a14 2
+	m_prPrimitives[2] = new sphere{ vec3(2, -0.5,-5), 1 };
+	m_prPrimitives[2]->m_maObjectMaterial = { {1,0,0}, 0.5, 1.5 };
+d16 2
+a17 2
+	m_prPrimitives[3] = new sphere{ vec3(-2.5, 3,-8), 1 };
+	m_prPrimitives[3]->m_maObjectMaterial = { {1,1,0}, 1.0, 1.5 };
+d19 2
+a20 2
+	m_prPrimitives[4] = new sphere{ vec3(0.5, -1.1,-2.5), 0.2 };
+	m_prPrimitives[4]->m_maObjectMaterial = { {1,1,0}, 0.0, 1.5 };
+d22 2
+a23 2
+	m_prPrimitives[5] = new plane{{0,0,0}, {0.5,1,0}, 2};
+	m_prPrimitives[5]->m_maObjectMaterial = { {}, 0.5, 1.5 };
+d27 1
+a27 1
+	m_lsLight = {{4.0, 10, 3.0}, {}, {200,200,200} };
+@
+
+
+1.232628
+log
+@@
+text
+@d11 1
+a11 1
+	m_prPrimitives[1]->m_maObjectMaterial = { {1,0,1}, -0.7, 1.5 };
+@
+
+
+1.231282
+log
+@@
+text
+@d4 1
+a4 1
+testscene::testscene()
+d6 1
+a6 2
+	m_prPrimitives[0] = new plane{ vec3(0, -1.5, 0), vec3(0,1,0), 10 };
+	//m_prPrimitives[0]->m_maObjectMaterial = {{}, 0.5, 1.5};
+d8 1
+a8 2
+	m_prPrimitives[1] = new sphere{ vec3(0, -0.5, -3), 1.0f };
+	m_prPrimitives[1]->m_maObjectMaterial = { {1,1,1}, -1, 1.5 };
+d10 5
+a14 2
+	m_prPrimitives[2] = new sphere{ vec3(4, -0.5,-5), 1 };
+	m_prPrimitives[2]->m_maObjectMaterial = { {1,0,0}, 1, 1.5 };
+d16 2
+a17 2
+	m_prPrimitives[3] = new sphere{ vec3(-4, -0.5,-4), 1 };
+	m_prPrimitives[3]->m_maObjectMaterial = { {1,1,0}, 1, 1.5 };
+d19 2
+a20 1
+	m_iPrimitiveCounter = 4;
+d22 6
+a27 1
+	m_lsLight = {{4.0, 5.0, 3.0}, {}, {100,100,100} };
+@

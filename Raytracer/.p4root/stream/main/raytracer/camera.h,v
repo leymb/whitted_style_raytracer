@@ -1,0 +1,158 @@
+head     1.219094;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.219094
+date     2020.12.09.15.41.51;  author p4;  state Exp;
+branches ;
+next     1.218296;
+
+1.218296
+date     2020.12.07.17.32.15;  author p4;  state Exp;
+branches ;
+next     1.217806;
+
+1.217806
+date     2020.12.04.16.33.49;  author p4;  state Exp;
+branches ;
+next     1.217228;
+
+1.217228
+date     2020.12.03.11.17.37;  author p4;  state Exp;
+branches ;
+next     1.216914;
+
+1.216914
+date     2020.12.02.15.57.32;  author p4;  state Exp;
+branches ;
+next     1.216771;
+
+1.216771
+date     2020.12.02.14.28.53;  author p4;  state Exp;
+branches ;
+next     1.216643;
+
+1.216643
+date     2020.12.02.12.17.03;  author p4;  state Exp;
+branches ;
+next     1.216302;
+
+1.216302
+date     2020.12.01.16.21.36;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.219094
+log
+@@
+text
+@#pragma once
+
+
+struct ray;
+
+struct camera
+{
+	camera(vec3 aPosition = { 0,0,0 }, vec3 aViewDirection = { 0,0,1 });
+
+	vec3 m_v3Position;
+	vec3 m_v3Direction;
+
+	vec3 m_v3ViewportP0{};
+	vec3 m_v3ViewportP1{};
+	vec3 m_v3ViewportP2{};
+
+	ray CreateRay(float u, float v);
+};
+
+@
+
+
+1.218296
+log
+@@
+text
+@d4 1
+a4 1
+class ray;
+@
+
+
+1.217806
+log
+@@
+text
+@d2 1
+a2 1
+#include "vec3.h"
+@
+
+
+1.217228
+log
+@@
+text
+@d8 1
+a8 1
+	camera(vec3 aPosition = { 0,0,0 }, vec3 aViewDirection = { 0,0,1.5 });
+@
+
+
+1.216914
+log
+@@
+text
+@d8 1
+a8 1
+	camera(vec3 aPosition = { 0,0,0 }, vec3 aViewDirection = { 0,1,1 });
+@
+
+
+1.216771
+log
+@@
+text
+@d3 3
+a5 1
+#include "ray.cpp"
+@
+
+
+1.216643
+log
+@@
+text
+@d3 1
+d6 1
+a6 1
+	camera(vec3 aPosition = { 0,0,0 }, vec3 aDirection = { 0,0,1 });
+d14 2
+@
+
+
+1.216302
+log
+@@
+text
+@d3 1
+a3 1
+class camera
+d5 1
+a5 1
+public:
+d7 2
+a8 2
+	camera(vec3 aPosition, vec3 aDirection);
+	~camera();
+d10 3
+a12 2
+	vec3 m_v3Position = {0,0,0};
+	vec3 m_v3Direction = {0,0,1};
+@

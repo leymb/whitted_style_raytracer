@@ -1,0 +1,194 @@
+head     1.229950;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.229950
+date     2021.01.20.14.47.20;  author p4;  state Exp;
+branches ;
+next     1.229432;
+
+1.229432
+date     2021.01.19.16.13.44;  author p4;  state Exp;
+branches ;
+next     1.224939;
+
+1.224939
+date     2021.01.08.14.26.32;  author p4;  state Exp;
+branches ;
+next     1.220586;
+
+1.220586
+date     2020.12.15.12.56.33;  author p4;  state Exp;
+branches ;
+next     1.219891;
+
+1.219891
+date     2020.12.11.17.02.15;  author p4;  state Exp;
+branches ;
+next     1.219812;
+
+1.219812
+date     2020.12.11.13.37.52;  author p4;  state Exp;
+branches ;
+next     1.219559;
+
+1.219559
+date     2020.12.10.15.33.41;  author p4;  state Exp;
+branches ;
+next     1.219071;
+
+1.219071
+date     2020.12.09.15.20.26;  author p4;  state Exp;
+branches ;
+next     1.216914;
+
+1.216914
+date     2020.12.02.15.57.32;  author p4;  state Exp;
+branches ;
+next     1.216331;
+
+1.216331
+date     2020.12.01.16.38.12;  author p4;  state Exp;
+branches ;
+next     1.215370;
+
+1.215370
+date     2020.11.27.17.43.16;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.229950
+log
+@@
+text
+@#pragma once
+#include "primitive.h"
+
+struct intersectionData;
+
+class sphere :
+    public primitive
+{
+public:
+
+	// functions
+    sphere(vec3 aPosition, float aRadius);
+    bool RayIntersection(ray& rPrimaryRay, intersectionData& isdData);
+    vec3 GetIntersectionNormal(vec3& intersectionPoint) override;
+    vec3 GetScreenspaceCoordinate(vec3& v3Origin, vec3& v3Left, vec3& v3Right, vec3& v3Up, vec3& v3Down, int iScrwidth, int iScrheight, float fViewportWidth, float& RadiusInPixels);
+	
+    // basic members defining a plane
+    float m_fRadius = 0.0f;
+};
+
+@
+
+
+1.229432
+log
+@@
+text
+@d15 1
+a15 1
+    vec3 GetScreenspaceCoordinate(vec3& v3Origin, vec3& v3Left, vec3& v3Right, vec3& v3Up, vec3& v3Down, int iScrwidth, int iScrheight);
+@
+
+
+1.224939
+log
+@@
+text
+@d15 1
+@
+
+
+1.220586
+log
+@@
+text
+@d10 2
+d15 2
+a16 1
+
+@
+
+
+1.219891
+log
+@@
+text
+@d12 1
+a12 1
+    vec3 getIntersectionNormal(vec3& intersectionPoint) override;
+@
+
+
+1.219812
+log
+@@
+text
+@d4 2
+@
+
+
+1.219559
+log
+@@
+text
+@d10 1
+@
+
+
+1.219071
+log
+@@
+text
+@d9 1
+a9 1
+    intersectionData RayIntersection(ray& rPrimaryRay);
+@
+
+
+1.216914
+log
+@@
+text
+@d9 1
+a9 1
+    bool RayIntersection(ray& rPrimaryRay);
+@
+
+
+1.216331
+log
+@@
+text
+@d3 1
+a3 1
+#include <stdio.h>
+a7 1
+
+d9 1
+a9 1
+    ~sphere();
+a11 2
+
+    bool RayIntersection(ray& rPrimaryRay);
+@
+
+
+1.215370
+log
+@@
+text
+@d12 1
+a12 1
+    float fRadius = 0.0f;
+@

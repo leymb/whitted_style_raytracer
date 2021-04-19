@@ -1,0 +1,120 @@
+head     1.226228;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.226228
+date     2021.01.12.16.09.52;  author p4;  state Exp;
+branches ;
+next     1.224128;
+
+1.224128
+date     2021.01.06.16.41.38;  author p4;  state Exp;
+branches ;
+next     1.220588;
+
+1.220588
+date     2020.12.15.13.08.33;  author p4;  state Exp;
+branches ;
+next     1.218296;
+
+1.218296
+date     2020.12.07.17.32.15;  author p4;  state Exp;
+branches ;
+next     1.216994;
+
+1.216994
+date     2020.12.02.16.52.56;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.226228
+log
+@@
+text
+@#include "precomp.h"
+
+
+void mathm::Clamp(int& value, int hi, int lo)
+{
+    if (value > hi)
+    {
+        value = hi;
+    }
+    else if (value < lo)
+    {
+        value = lo;
+    }
+}
+
+void mathm::Clamp(float& value, float hi, float lo)
+{
+    if (value > hi)
+    {
+        value = hi;
+    }
+    else if (value < lo)
+    {
+        value = lo;
+    }
+}
+
+void mathm::Swap(int& firstValue, int& secondValue)
+{
+	const int temp = secondValue;
+    secondValue = firstValue;
+    firstValue = temp;
+}
+
+void mathm::Swap(float& firstValue, float& secondValue)
+{
+    const float temp = secondValue;
+    secondValue = firstValue;
+    firstValue = temp;
+}
+
+bool mathm::CompFloat(float a, float b)
+{
+    return abs(a - b) < 1e-5f;
+}
+@
+
+
+1.224128
+log
+@@
+text
+@d41 5
+@
+
+
+1.220588
+log
+@@
+text
+@d27 14
+@
+
+
+1.218296
+log
+@@
+text
+@d15 12
+@
+
+
+1.216994
+log
+@@
+text
+@d2 1
+a2 1
+#include "mathm.h"
+@

@@ -1,0 +1,43 @@
+head     1.230304;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.230304
+date     2021.01.20.19.11.22;  author p4;  state Exp;
+branches ;
+next     1.229203;
+
+1.229203
+date     2021.01.19.12.14.46;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.230304
+log
+@@
+text
+@#pragma once
+
+struct cell
+{
+	int m_iPrimitiveIndices[128]{ 0 };
+	int m_iPrimCounter = 0;
+};
+@
+
+
+1.229203
+log
+@@
+text
+@d5 1
+a5 1
+	int m_iPrimitiveIndices[128]{ -1 };
+@

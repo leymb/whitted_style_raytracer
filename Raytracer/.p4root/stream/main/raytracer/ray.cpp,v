@@ -1,0 +1,158 @@
+head     1.219559;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.219559
+date     2020.12.10.15.33.41;  author p4;  state Exp;
+branches ;
+next     1.218296;
+
+1.218296
+date     2020.12.07.17.32.15;  author p4;  state Exp;
+branches ;
+next     1.218287;
+
+1.218287
+date     2020.12.07.17.17.07;  author p4;  state Exp;
+branches ;
+next     1.217542;
+
+1.217542
+date     2020.12.03.16.53.34;  author p4;  state Exp;
+branches ;
+next     1.216914;
+
+1.216914
+date     2020.12.02.15.57.32;  author p4;  state Exp;
+branches ;
+next     1.216344;
+
+1.216344
+date     2020.12.01.16.50.27;  author p4;  state Exp;
+branches ;
+next     1.215304;
+
+1.215304
+date     2020.11.27.15.05.29;  author p4;  state Exp;
+branches ;
+next     1.215130;
+
+1.215130
+date     2020.11.26.17.57.31;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.219559
+log
+@@
+text
+@#include "precomp.h"
+
+
+ray::ray(vec3 aOrigin, vec3 aDirection)
+{
+	m_v3Origin = aOrigin;
+	m_v3Direction = aDirection.Normalize();
+}
+@
+
+
+1.218296
+log
+@@
+text
+@d7 1
+a7 2
+	m_v3Direction = aDirection;
+	m_v3Direction.Normalize();
+@
+
+
+1.218287
+log
+@@
+text
+@d2 1
+a2 1
+#include "ray.h"
+@
+
+
+1.217542
+log
+@@
+text
+@d4 1
+a4 1
+ray::ray(vec3 aOrigin, vec3 aDirection, float aDistance)
+a8 1
+	m_fDistance = aDistance;
+@
+
+
+1.216914
+log
+@@
+text
+@d6 4
+a9 4
+	origin = aOrigin;
+	direction = aDirection;
+	direction.Normalize();
+	distance = aDistance;
+@
+
+
+1.216344
+log
+@@
+text
+@d1 1
+d4 1
+a4 1
+ray::ray(vec3* aOrigin, vec3 aDirection, float aDistance)
+a10 5
+
+ray::~ray()
+{
+
+}@
+
+
+1.215304
+log
+@@
+text
+@a7 1
+
+d13 1
+@
+
+
+1.215130
+log
+@@
+text
+@d3 1
+a3 8
+ray::ray()
+{
+	origin = nullptr;
+	direction = { 0,0,0 };
+}
+
+
+ray::ray(point* o, vec3 d)
+d5 2
+a6 2
+	origin = o;
+	direction = d;
+d8 2
+@

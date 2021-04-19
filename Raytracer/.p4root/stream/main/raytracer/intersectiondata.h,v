@@ -1,0 +1,96 @@
+head     1.222419;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.222419
+date     2020.12.18.14.03.43;  author p4;  state Exp;
+branches ;
+next     1.220586;
+
+1.220586
+date     2020.12.15.12.56.33;  author p4;  state Exp;
+branches ;
+next     1.219891;
+
+1.219891
+date     2020.12.11.17.02.15;  author p4;  state Exp;
+branches ;
+next     1.219071;
+
+1.219071
+date     2020.12.09.15.20.25;  author p4;  state Exp;
+branches ;
+next     1.219007;
+
+1.219007
+date     2020.12.09.14.25.21;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.222419
+log
+@@
+text
+@#pragma once
+struct intersectionData
+{
+	intersectionData(bool aBool = false, vec3 aIntersectionPoint = {}, vec3 aIntersectionNormal = {}, material maAMaterial = {});
+	
+	bool m_bIntersectionDetected{false};
+
+	//I
+	vec3 m_v3IntersectionPoint{0,0,0};
+	//N
+	vec3 m_v3IntersectionNormal{};
+	//material
+	material m_maTransportedMaterial = {};
+};
+@
+
+
+1.220586
+log
+@@
+text
+@d4 1
+a4 1
+	intersectionData(bool aBool = false, vec3 aIntersectionPoint = {}, vec3 aColor =  {});
+d7 2
+d10 4
+a13 1
+	vec3 m_v3Color{};
+@
+
+
+1.219891
+log
+@@
+text
+@d8 1
+@
+
+
+1.219071
+log
+@@
+text
+@a7 1
+	vec3 m_v3TransportedColor{0,0,0};
+@
+
+
+1.219007
+log
+@@
+text
+@d4 1
+a4 1
+	intersectionData(bool aBool, vec3 aIntersectionPoint, vec3 aColor);
+@

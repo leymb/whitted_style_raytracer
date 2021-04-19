@@ -1,0 +1,53 @@
+head     1.214816;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.214816
+date     2020.11.26.13.35.38;  author p4;  state Exp;
+branches ;
+next     1.214605;
+
+1.214605
+date     2020.11.25.17.15.45;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.214816
+log
+@@
+text
+@#include "../../vec3.h"
+#include "../math/point.h"
+
+
+struct ray
+{
+	ray(point* o, vec3 d);
+
+	point* origin; 
+	vec3 direction = { 0.0, 0.0, 0.0 };
+};@
+
+
+1.214605
+log
+@@
+text
+@d1 1
+a1 1
+#include "../math/vec3.h"
+d7 1
+a7 1
+	ray(point o, vec3 d);
+d9 2
+a10 2
+	point origin = { 0,0,0 }; 
+	vec3 direction = { 0,0,0 };
+@

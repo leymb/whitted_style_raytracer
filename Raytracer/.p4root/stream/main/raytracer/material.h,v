@@ -1,0 +1,109 @@
+head     1.228854;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.228854
+date     2021.01.18.17.19.05;  author p4;  state Exp;
+branches ;
+next     1.227789;
+
+1.227789
+date     2021.01.14.15.16.32;  author p4;  state Exp;
+branches ;
+next     1.224939;
+
+1.224939
+date     2021.01.08.14.26.32;  author p4;  state Exp;
+branches ;
+next     1.224151;
+
+1.224151
+date     2021.01.06.17.06.40;  author p4;  state Exp;
+branches ;
+next     1.222449;
+
+1.222449
+date     2020.12.18.15.25.10;  author p4;  state Exp;
+branches ;
+next     1.222395;
+
+1.222395
+date     2020.12.18.13.16.08;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.228854
+log
+@@
+text
+@#pragma once
+struct material
+{
+	material(vec3 aColor = { 0,0,0 }, float aReflectionIndex = 0.0, float aRefractionIndex = 1.1, float aDiffusionValue = 0.9);
+	vec3 m_v3Color{};
+	float m_fReflectionIndex;
+	float m_fRefractionIndex;
+	float fDiffusion;
+};
+@
+
+
+1.227789
+log
+@@
+text
+@d4 1
+a4 1
+	material(vec3 aColor = { 0,0,0 }, float aReflectionIndex = 0.0, float aRefractionIndex = 0.0, float aDiffusionValue = 0.9);
+d6 3
+a8 3
+	float m_fReflectionIndex = 0;
+	float m_fRefractionIndex = 1.0;
+	float fDiffusion = 0.9;
+@
+
+
+1.224939
+log
+@@
+text
+@d4 1
+a4 1
+	material(vec3 aColor = { 0,0,0 }, float aReflectionIndex = 0, float aDiffusionValue = 0.9);
+@
+
+
+1.224151
+log
+@@
+text
+@d7 1
+a7 1
+	float m_RefractionIndex = 1.0;
+@
+
+
+1.222449
+log
+@@
+text
+@d7 1
+@
+
+
+1.222395
+log
+@@
+text
+@d4 1
+a4 1
+	material(vec3 aColor = { 0,0,0 }, float aReflectionIndex = 0);
+d7 1
+@

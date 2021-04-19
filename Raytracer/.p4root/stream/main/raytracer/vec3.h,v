@@ -1,0 +1,327 @@
+head     1.228237;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.228237
+date     2021.01.15.16.06.06;  author p4;  state Exp;
+branches ;
+next     1.220953;
+
+1.220953
+date     2020.12.15.17.03.27;  author p4;  state Exp;
+branches ;
+next     1.218296;
+
+1.218296
+date     2020.12.07.17.32.15;  author p4;  state Exp;
+branches ;
+next     1.217806;
+
+1.217806
+date     2020.12.04.16.33.49;  author p4;  state Exp;
+branches ;
+next     1.217542;
+
+1.217542
+date     2020.12.03.16.53.34;  author p4;  state Exp;
+branches ;
+next     1.216914;
+
+1.216914
+date     2020.12.02.15.57.33;  author p4;  state Exp;
+branches ;
+next     1.216335;
+
+1.216335
+date     2020.12.01.16.40.41;  author p4;  state Exp;
+branches ;
+next     1.215371;
+
+1.215371
+date     2020.11.27.17.44.09;  author p4;  state Exp;
+branches ;
+next     1.215306;
+
+1.215306
+date     2020.11.27.15.06.00;  author p4;  state Exp;
+branches ;
+next     1.214822;
+
+1.214822
+date     2020.11.26.13.43.43;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.228237
+log
+@@
+text
+@#pragma once
+#include <cmath> //only used for sqrt
+class vec3
+{
+public:
+
+	constexpr vec3(float aX = 0.0f, float aY = 0.0f, float aZ = 0.0f);
+
+	float x;
+	float y;
+	float z;
+
+	inline vec3& Normalize();
+
+	inline float GetMagnitude() const;
+	constexpr float GetSquaredMagnitude() const;
+
+	constexpr float DotWith(vec3& vector) const;
+
+	constexpr vec3 CrossWith(vec3& vector) const;
+
+	constexpr vec3 operator+(const vec3& v3) const;
+	constexpr vec3 operator-(const vec3& v3) const;
+	constexpr vec3 operator*(const vec3& v3) const;
+	constexpr vec3 operator*(const float& other) const;
+	constexpr void operator+=(const vec3& other);
+	constexpr void operator-=(const vec3& other);
+	constexpr void operator*=(const vec3& other);
+	constexpr bool operator==(const vec3& other) const;
+	constexpr bool operator!=(const vec3& other) const;
+};
+
+constexpr vec3::vec3(const float aX, const float aY, const float aZ) : x(aX), y(aY), z(aZ)
+{
+}
+
+inline vec3& vec3::Normalize()
+{
+	const auto m = 1.f / GetMagnitude();
+
+	*this = *this * m;
+
+	return *this;
+}
+
+inline float vec3::GetMagnitude() const
+{
+	return sqrtf((x * x) + (y * y) + (z * z));
+}
+
+// redundant, dot the vector with itself to get same result
+constexpr float vec3::GetSquaredMagnitude() const
+{
+	return ((x * x) + (y * y) + (z * z));
+}
+
+constexpr float vec3::DotWith(vec3& vector) const
+{
+	const auto fScalar = (x * vector.x) + (y * vector.y) + (z * vector.z);
+	return fScalar;
+}
+
+constexpr vec3 vec3::CrossWith(vec3& vector) const
+{
+	vec3 v3CrossedVector = { 0,0,0 };
+
+	v3CrossedVector.x = (y * vector.z) - (z * vector.y);
+	v3CrossedVector.y = (z * vector.x) - (x * vector.z);
+	v3CrossedVector.z = (x * vector.y) - (y * vector.x);
+
+	return v3CrossedVector;
+}
+
+constexpr vec3 vec3::operator+(const vec3& v3) const
+{
+	return { x + v3.x, y + v3.y, z + v3.z };
+}
+
+constexpr vec3 vec3::operator-(const vec3& v3) const
+{
+	return { x - v3.x, y - v3.y, z - v3.z };
+}
+
+constexpr vec3 vec3::operator*(const vec3& v3) const
+{
+	return { x * v3.x, y * v3.y, z * v3.z };
+}
+
+constexpr vec3 vec3::operator*(const float& f) const
+{
+	return { x * f, y * f, z * f };
+}
+
+constexpr void vec3::operator+=(const vec3& other)
+{
+	x += other.x;
+	y += other.y;
+	z += other.z;
+}
+
+constexpr void vec3::operator-=(const vec3& other)
+{
+	x -= other.x;
+	y -= other.y;
+	z -= other.z;
+}
+
+constexpr void vec3::operator*=(const vec3& other)
+{
+	x *= other.x;
+	y *= other.y;
+	z *= other.z;
+}
+
+constexpr bool vec3::operator==(const vec3& other) const
+{
+	return x == other.x && y == other.y && z == other.z;
+}
+
+constexpr bool vec3::operator!=(const vec3& other) const
+{
+	return !(*this == other);
+}
+@
+
+
+1.220953
+log
+@@
+text
+@d7 1
+a7 1
+	vec3(float aX = 0.0f, float aY = 0.0f, float aZ = 0.0f);
+d13 1
+a13 1
+	vec3& Normalize();
+d15 2
+a16 2
+	float GetMagnitude() const;
+	float GetSquaredMagnitude() const;
+d18 1
+a18 1
+	float DotWith(vec3& vector) const;
+d20 1
+a20 1
+	vec3 CrossWith(vec3& vector) const;
+d22 9
+a30 9
+	vec3 operator+(const vec3& v3) const;
+	vec3 operator-(const vec3& v3) const;
+	vec3 operator*(const vec3& v3) const;
+	vec3 operator*(const float& other) const;
+	void operator+=(const vec3& other);
+	void operator-=(const vec3& other);
+	void operator*=(const vec3& other);
+	bool operator==(const vec3& other) const;
+	bool operator!=(const vec3& other) const;
+d32 92
+@
+
+
+1.218296
+log
+@@
+text
+@d16 2
+d26 5
+@
+
+
+1.217806
+log
+@@
+text
+@d2 1
+a2 1
+#include <math.h> //only used for sqrt
+@
+
+
+1.217542
+log
+@@
+text
+@d15 2
+a16 2
+	float GetMagnitude();
+	float DotWith(vec3& vector);
+d18 1
+a18 1
+	vec3 CrossWith(vec3& vector);
+d20 4
+a23 4
+	vec3 operator+(const vec3& v3);
+	vec3 operator-(const vec3& v3);
+	vec3 operator*(const vec3& v3);
+	vec3 operator*(const float& other);
+@
+
+
+1.216914
+log
+@@
+text
+@a7 1
+	~vec3();
+d13 1
+a13 1
+	void Normalize();
+@
+
+
+1.216335
+log
+@@
+text
+@d7 1
+a7 1
+	vec3(float aX, float aY, float aZ);
+d10 3
+a12 3
+	float x = 0.0f;
+	float y = 0.0f;
+	float z = 0.0f;
+d21 5
+a25 6
+	vec3 operator+(const vec3& v3) const { return vec3(x + v3.x, y + v3.y, z + v3.z); };
+	vec3 operator-(const vec3& v3) const { return vec3(x - v3.x, y - v3.y, z - v3.z); };
+	vec3 operator*(const vec3& v3) const { return vec3(x * v3.x, y * v3.y, z * v3.z); };
+	friend vec3 operator*(const vec3& v3, const float f) { return vec3(v3.x * f, v3.y * f, v3.z * f); };
+}; 
+
+@
+
+
+1.215371
+log
+@@
+text
+@d2 1
+a2 1
+#include <math.h>
+d18 1
+@
+
+
+1.215306
+log
+@@
+text
+@d23 1
+@
+
+
+1.214822
+log
+@@
+text
+@d19 5
+a23 1
+};
+@

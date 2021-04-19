@@ -1,0 +1,151 @@
+head     1.229203;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.229203
+date     2021.01.19.12.14.46;  author p4;  state Exp;
+branches ;
+next     1.228239;
+
+1.228239
+date     2021.01.15.16.07.35;  author p4;  state Exp;
+branches ;
+next     1.222395;
+
+1.222395
+date     2020.12.18.13.16.08;  author p4;  state Exp;
+branches ;
+next     1.219624;
+
+1.219624
+date     2020.12.10.16.35.37;  author p4;  state Exp;
+branches ;
+next     1.219007;
+
+1.219007
+date     2020.12.09.14.25.21;  author p4;  state Exp;
+branches ;
+next     1.218605;
+
+1.218605
+date     2020.12.08.15.04.24;  author p4;  state Exp;
+branches ;
+next     1.218296;
+
+1.218296
+date     2020.12.07.17.32.15;  author p4;  state Exp;
+branches ;
+next     1.217806;
+
+1.217806
+date     2020.12.04.16.33.49;  author p4;  state Exp;
+branches ;
+next     1.216904;
+
+1.216904
+date     2020.12.02.15.50.10;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.229203
+log
+@@
+text
+@#pragma once
+#include <SDL.h>
+#include "vec3.h"
+#include "camera.h"
+#include "ray.h"
+#include "renderer.h"
+#include "primitive.h"
+#include "sphere.h"
+#include "plane.h"
+#include "scene.h"
+#include "testscene.h"
+#include "mathm.h"
+#include "rgbcolor.h"
+#include "intersectiondata.h"
+#include "lightsource.h"
+#include "material.h"
+#include "cell.h"@
+
+
+1.228239
+log
+@@
+text
+@d16 2
+a17 1
+#include "material.h"@
+
+
+1.222395
+log
+@@
+text
+@d11 1
+@
+
+
+1.219624
+log
+@@
+text
+@d14 2
+a15 1
+#include "lightsource.h"@
+
+
+1.219007
+log
+@@
+text
+@d13 2
+a14 1
+#include "intersectiondata.h"@
+
+
+1.218605
+log
+@@
+text
+@d12 2
+a13 1
+#include "rgbcolor.h"@
+
+
+1.218296
+log
+@@
+text
+@d11 2
+a12 1
+#include "mathm.h"@
+
+
+1.217806
+log
+@@
+text
+@d10 2
+a11 1
+#include "scene.h"@
+
+
+1.216904
+log
+@@
+text
+@d2 1
+a2 1
+#include "SDL.h"
+d8 3
+a10 1
+#include "sphere.h"@

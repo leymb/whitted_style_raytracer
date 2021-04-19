@@ -1,0 +1,29 @@
+head     1.231282;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.231282
+date     2021.01.22.16.35.13;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.231282
+log
+@@
+text
+@#include "precomp.h"
+
+
+ray::ray(vec3 aOrigin, vec3 aDirection)
+{
+	m_v3Origin = aOrigin;
+	m_v3Direction = aDirection.Normalize();
+}
+@

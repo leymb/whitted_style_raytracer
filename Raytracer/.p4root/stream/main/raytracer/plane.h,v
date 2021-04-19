@@ -1,0 +1,159 @@
+head     1.229950;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.229950
+date     2021.01.20.14.47.20;  author p4;  state Exp;
+branches ;
+next     1.224939;
+
+1.224939
+date     2021.01.08.14.26.32;  author p4;  state Exp;
+branches ;
+next     1.220586;
+
+1.220586
+date     2020.12.15.12.56.33;  author p4;  state Exp;
+branches ;
+next     1.219812;
+
+1.219812
+date     2020.12.11.13.37.52;  author p4;  state Exp;
+branches ;
+next     1.219559;
+
+1.219559
+date     2020.12.10.15.33.41;  author p4;  state Exp;
+branches ;
+next     1.219071;
+
+1.219071
+date     2020.12.09.15.20.25;  author p4;  state Exp;
+branches ;
+next     1.218883;
+
+1.218883
+date     2020.12.09.11.22.03;  author p4;  state Exp;
+branches ;
+next     1.217806;
+
+1.217806
+date     2020.12.04.16.33.49;  author p4;  state Exp;
+branches ;
+next     1.217230;
+
+1.217230
+date     2020.12.03.11.20.04;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.229950
+log
+@@
+text
+@#pragma once
+#include "primitive.h"
+
+struct ray;
+
+class plane :
+    public primitive
+{
+public:
+
+	// functions
+    plane(vec3 aPosition = { 0,0,0 }, vec3 aNormal = {0,1,0}, float aDistance = 0);
+    bool RayIntersection(ray& rPrimaryRay, intersectionData& isdData) override;
+    vec3 GetIntersectionNormal(vec3& intersectionPoint) override;
+    vec3 GetScreenspaceCoordinate(vec3& v3Origin, vec3& v3Left, vec3& v3Right, vec3& v3Up, vec3& v3Down, int iScrwidth, int iScrheight, float fViewportWidth, float& RadiusInPixels) override;
+
+	// basic members defining a plane
+    vec3 m_v3Normal{0.0f, 0.0f, 0.0f};
+    float m_fDistanceFromOrigin = 0;
+};
+
+@
+
+
+1.224939
+log
+@@
+text
+@d15 1
+@
+
+
+1.220586
+log
+@@
+text
+@d10 3
+a12 1
+    plane(vec3 aPosition, vec3 aNormal, float aLength);
+d16 1
+@
+
+
+1.219812
+log
+@@
+text
+@d12 1
+a12 1
+    vec3 getIntersectionNormal(vec3& intersectionPoint) override;
+@
+
+
+1.219559
+log
+@@
+text
+@d12 1
+@
+
+
+1.219071
+log
+@@
+text
+@d11 1
+a11 1
+    intersectionData RayIntersection(ray& rPrimaryRay) override;
+@
+
+
+1.218883
+log
+@@
+text
+@d11 1
+a11 1
+    bool RayIntersection(ray& rPrimaryRay) override;
+@
+
+
+1.217806
+log
+@@
+text
+@d14 1
+a14 1
+    float m_fLength = 0;
+@
+
+
+1.217230
+log
+@@
+text
+@d11 1
+a11 1
+    bool RayIntersection(ray& rPrimaryRay);
+@

@@ -1,0 +1,72 @@
+head     1.214510;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.214510
+date     2020.11.25.14.29.41;  author p4;  state Exp;
+branches ;
+next     1.214495;
+
+1.214495
+date     2020.11.25.14.10.01;  author p4;  state Exp;
+branches ;
+next     1.214435;
+
+1.214435
+date     2020.11.25.12.09.09;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.214510
+log
+@@
+text
+@#include <math.h>
+
+class vec3
+{
+public: 
+	vec3(float aX, float aY, float aZ);
+	~vec3();
+
+	float x = 0;
+	float y = 0;
+	float z = 0;
+
+	void Normalize();
+
+	float GetMagnitude();
+	float DotWith(vec3& vector);
+	vec3 CrossWith(vec3& vector);
+
+}; @
+
+
+1.214495
+log
+@@
+text
+@d16 2
+a17 1
+	float DotWith(vec3 vectorB);
+@
+
+
+1.214435
+log
+@@
+text
+@d3 1
+a3 1
+struct vec3
+d5 1
+d14 1
+d16 2
+@

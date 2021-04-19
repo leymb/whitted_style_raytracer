@@ -1,0 +1,136 @@
+head     1.229959;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.229959
+date     2021.01.20.14.49.26;  author p4;  state Exp;
+branches ;
+next     1.226231;
+
+1.226231
+date     2021.01.12.16.10.53;  author p4;  state Exp;
+branches ;
+next     1.222449;
+
+1.222449
+date     2020.12.18.15.25.10;  author p4;  state Exp;
+branches ;
+next     1.222418;
+
+1.222418
+date     2020.12.18.14.03.14;  author p4;  state Exp;
+branches ;
+next     1.222402;
+
+1.222402
+date     2020.12.18.13.28.34;  author p4;  state Exp;
+branches ;
+next     1.217301;
+
+1.217301
+date     2020.12.03.12.17.29;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.229959
+log
+@@
+text
+@#pragma once
+#include "lightsource.h"
+
+class scene
+{
+public:
+	scene();
+	~scene();
+	void AddPrimitive(primitive& aPrimitive);
+	intersectionData& GetIntersection(ray aRay);
+
+	int m_iPrimitiveCounter = 0;
+	primitive* m_prPrimitives[100]{nullptr};
+
+	int m_iLightCounter = 1;
+	lightSource* m_lsLightSources[100]{ nullptr };
+	
+	lightSource m_lsLight{{0.0, 6.0, 5.0}};
+}; 
+@
+
+
+1.226231
+log
+@@
+text
+@d14 4
+@
+
+
+1.222449
+log
+@@
+text
+@d4 1
+a4 1
+struct scene
+d6 1
+d8 1
+d12 1
+a12 1
+	int m_iPrimitiveCounter = 3;
+d14 1
+a14 6
+	vec3* m_v3Lights[10]{nullptr};
+
+	sphere* m_spReflectingTestSphere = new sphere{ vec3(2, -0.5, -5), 1.0f };
+	sphere* m_spShadedTestSphere = new sphere{vec3(-2, -0.5,-5), 1};
+	plane* m_plTestPlane = new plane{ vec3(0, -1.5, 0), vec3(0,1,0), 10 };
+	lightSource lsPointLight{ vec3{3, 4, -1}, {}, {50, 50, 50}, 1 };
+@
+
+
+1.222418
+log
+@@
+text
+@d10 1
+a10 1
+	int m_iPrimitiveCounter = 2;
+d14 2
+a15 1
+	sphere* m_spTestSphere = new sphere{ vec3(0, -0.5, -5), 1.0f };
+d17 1
+a17 1
+	lightSource lsPointLight{ vec3{5, 4, -1}, {}, {50, 50, 50}, 1 };
+@
+
+
+1.222402
+log
+@@
+text
+@d2 1
+a2 3
+
+//class primitive;
+//class vec3;
+d16 1
+@
+
+
+1.217301
+log
+@@
+text
+@d8 5
+d16 2
+a17 1
+	void PushPrimitive(primitive& aPrimitive);
+@

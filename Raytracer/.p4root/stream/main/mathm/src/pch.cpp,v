@@ -1,0 +1,26 @@
+head     1.231282;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.231282
+date     2021.01.22.16.35.13;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.231282
+log
+@@
+text
+@// pch.cpp: source file corresponding to the pre-compiled header
+
+#include "pch.h"
+
+// When you are using pre-compiled headers, this source file is necessary for compilation to succeed.
+@

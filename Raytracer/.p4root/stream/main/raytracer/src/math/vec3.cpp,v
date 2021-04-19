@@ -1,0 +1,79 @@
+head     1.214495;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.214495
+date     2020.11.25.14.10.01;  author p4;  state Exp;
+branches ;
+next     1.214435;
+
+1.214435
+date     2020.11.25.12.09.09;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.214495
+log
+@@
+text
+@#include "../../include/math/vec3.h"
+vec3::vec3(float aX, float aY, float aZ)
+{
+	x = aX;
+	y = aY;
+	z = aZ;
+}
+
+vec3::~vec3()
+{
+}
+
+void vec3::Normalize()
+{
+	float m = GetMagnitude();
+
+	if (m != 1)
+	{
+		x /= m;
+		y /= m;
+		z /= m;
+	}
+}
+
+float vec3::GetMagnitude()
+{
+	return sqrtf( (x * x) + (y * y) + (z * z) );
+}
+
+float vec3::DotWith(vec3& vector)
+{
+	float fScalar = (x * vector.x) + (y * vector.y) + (z * vector.z);
+	return fScalar;
+}
+
+vec3 vec3::CrossWith(vec3& vector)
+{
+	vec3 v3CrossedVector = { 0,0,0 };
+
+	v3CrossedVector.x = (y * vector.z) - (z * vector.y);
+	v3CrossedVector.y = (z * vector.x) - (x * vector.z);
+	v3CrossedVector.z = (x * vector.y) - (y * vector.x);
+
+	return v3CrossedVector;
+}
+@
+
+
+1.214435
+log
+@@
+text
+@d29 17
+@

@@ -1,0 +1,23 @@
+head     1.219624;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.219624
+date     2020.12.10.16.35.37;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.219624
+log
+@@
+text
+@#include "precomp.h"
+#include "lightsource.h"
+@

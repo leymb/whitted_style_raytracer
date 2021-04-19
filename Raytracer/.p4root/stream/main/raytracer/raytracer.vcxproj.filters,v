@@ -1,0 +1,386 @@
+head     1.231282;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.231282
+date     2021.01.22.16.35.13;  author p4;  state Exp;
+branches ;
+next     1.231139;
+
+1.231139
+date     2021.01.22.13.16.13;  author p4;  state Exp;
+branches ;
+next     1.229980;
+
+1.229980
+date     2021.01.20.14.56.55;  author p4;  state Exp;
+branches ;
+next     1.222449;
+
+1.222449
+date     2020.12.18.15.25.10;  author p4;  state Exp;
+branches ;
+next     1.219891;
+
+1.219891
+date     2020.12.11.17.02.15;  author p4;  state Exp;
+branches ;
+next     1.218883;
+
+1.218883
+date     2020.12.09.11.22.03;  author p4;  state Exp;
+branches ;
+next     1.217806;
+
+1.217806
+date     2020.12.04.16.33.49;  author p4;  state Exp;
+branches ;
+next     1.216914;
+
+1.216914
+date     2020.12.02.15.57.32;  author p4;  state Exp;
+branches ;
+next     1.215370;
+
+1.215370
+date     2020.11.27.17.43.16;  author p4;  state Exp;
+branches ;
+next     1.214106;
+
+1.214106
+date     2020.11.23.17.16.14;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.231282
+log
+@@
+text
+@<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\misc\camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\misc\cell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\misc\intersectiondata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\misc\lightsource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\misc\material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\misc\rgbcolor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\primitives\plane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\primitives\primitive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\primitives\sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\testscene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\precomp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\misc\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\misc\cell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\misc\intersectiondata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\misc\lightsource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\misc\material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\misc\rgbcolor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\primitives\plane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\primitives\primitive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\primitives\sphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\scenes\scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\scenes\testscene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\precomp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>@
+
+
+1.231139
+log
+@@
+text
+@d21 1
+a21 1
+    <ClCompile Include="ray.cpp">
+d24 1
+a24 1
+    <ClCompile Include="sphere.cpp">
+d27 1
+a27 1
+    <ClCompile Include="primitive.cpp">
+d30 1
+a30 1
+    <ClCompile Include="plane.cpp">
+d33 1
+a33 1
+    <ClCompile Include="camera.cpp">
+d36 1
+a36 1
+    <ClCompile Include="precomp.cpp">
+d39 1
+a39 1
+    <ClCompile Include="renderer.cpp">
+d42 1
+a42 1
+    <ClCompile Include="scene.cpp">
+d45 1
+a45 1
+    <ClCompile Include="rgbcolor.cpp">
+d48 1
+a48 1
+    <ClCompile Include="intersectiondata.cpp">
+d51 1
+a51 1
+    <ClCompile Include="lightsource.cpp">
+d54 1
+a54 1
+    <ClCompile Include="material.cpp">
+d57 1
+a57 1
+    <ClCompile Include="testscene.cpp">
+d60 1
+a60 1
+    <ClCompile Include="cell.cpp">
+d65 1
+a65 1
+    <ClInclude Include="ray.h">
+d68 1
+a68 1
+    <ClInclude Include="sphere.h">
+d71 1
+a71 1
+    <ClInclude Include="primitive.h">
+d74 1
+a74 1
+    <ClInclude Include="plane.h">
+d77 1
+a77 1
+    <ClInclude Include="camera.h">
+d80 1
+a80 1
+    <ClInclude Include="precomp.h">
+d83 1
+a83 1
+    <ClInclude Include="renderer.h">
+d86 1
+a86 1
+    <ClInclude Include="scene.h">
+d89 1
+a89 1
+    <ClInclude Include="rgbcolor.h">
+d92 1
+a92 1
+    <ClInclude Include="intersectiondata.h">
+d95 1
+a95 1
+    <ClInclude Include="lightsource.h">
+d98 1
+a98 1
+    <ClInclude Include="material.h">
+d101 1
+a101 1
+    <ClInclude Include="testscene.h">
+d104 1
+a104 1
+    <ClInclude Include="cell.h">
+@
+
+
+1.229980
+log
+@@
+text
+@a59 6
+    <ClCompile Include="mathm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vec3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+a103 6
+    <ClInclude Include="mathm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+@
+
+
+1.222449
+log
+@@
+text
+@a20 3
+    <ClCompile Include="vec3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+a41 3
+    <ClCompile Include="mathm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+d57 12
+a70 3
+    <ClInclude Include="vec3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+a91 3
+    <ClInclude Include="mathm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+d107 12
+@
+
+
+1.219891
+log
+@@
+text
+@d60 3
+d104 3
+@
+
+
+1.218883
+log
+@@
+text
+@d54 6
+d95 6
+@
+
+
+1.217806
+log
+@@
+text
+@d51 3
+d86 3
+@
+
+
+1.216914
+log
+@@
+text
+@a35 3
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+d42 9
+a52 6
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\math\point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+a67 3
+    <ClInclude Include="Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+d74 9
+@
+
+
+1.215370
+log
+@@
+text
+@a23 3
+    <ClCompile Include="Raytracer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+d33 12
+a55 3
+    <ClInclude Include="Raytracer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+d65 12
+@
+
+
+1.214106
+log
+@@
+text
+@d21 38
+@

@@ -1,0 +1,436 @@
+head     1.229950;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.229950
+date     2021.01.20.14.47.20;  author p4;  state Exp;
+branches ;
+next     1.229432;
+
+1.229432
+date     2021.01.19.16.13.44;  author p4;  state Exp;
+branches ;
+next     1.229270;
+
+1.229270
+date     2021.01.19.14.03.33;  author p4;  state Exp;
+branches ;
+next     1.228821;
+
+1.228821
+date     2021.01.18.17.05.13;  author p4;  state Exp;
+branches ;
+next     1.224939;
+
+1.224939
+date     2021.01.08.14.26.32;  author p4;  state Exp;
+branches ;
+next     1.222420;
+
+1.222420
+date     2020.12.18.14.04.16;  author p4;  state Exp;
+branches ;
+next     1.222395;
+
+1.222395
+date     2020.12.18.13.16.08;  author p4;  state Exp;
+branches ;
+next     1.220586;
+
+1.220586
+date     2020.12.15.12.56.33;  author p4;  state Exp;
+branches ;
+next     1.219891;
+
+1.219891
+date     2020.12.11.17.02.15;  author p4;  state Exp;
+branches ;
+next     1.219812;
+
+1.219812
+date     2020.12.11.13.37.52;  author p4;  state Exp;
+branches ;
+next     1.219559;
+
+1.219559
+date     2020.12.10.15.33.41;  author p4;  state Exp;
+branches ;
+next     1.219071;
+
+1.219071
+date     2020.12.09.15.20.25;  author p4;  state Exp;
+branches ;
+next     1.218883;
+
+1.218883
+date     2020.12.09.11.22.03;  author p4;  state Exp;
+branches ;
+next     1.218296;
+
+1.218296
+date     2020.12.07.17.32.15;  author p4;  state Exp;
+branches ;
+next     1.218287;
+
+1.218287
+date     2020.12.07.17.17.07;  author p4;  state Exp;
+branches ;
+next     1.218002;
+
+1.218002
+date     2020.12.07.11.37.18;  author p4;  state Exp;
+branches ;
+next     1.217806;
+
+1.217806
+date     2020.12.04.16.33.49;  author p4;  state Exp;
+branches ;
+next     1.217230;
+
+1.217230
+date     2020.12.03.11.20.04;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.229950
+log
+@@
+text
+@#include "precomp.h"
+
+
+plane::plane(vec3 aPosition, vec3 aNormal, float aDistance)
+{
+	m_v3Position = aPosition;
+	m_v3Normal = aNormal;
+	m_fDistanceFromOrigin = aDistance;
+	m_maObjectMaterial = { {1.0f,0.05f,0.8f}, 0.5 };
+
+	m_iPrimitiveType = planar;
+};
+
+bool plane::RayIntersection(ray& rPrimaryRay, intersectionData& isdData)
+{
+	const auto denom = m_v3Normal.DotWith(rPrimaryRay.m_v3Direction);
+	
+	if (fabsf(denom) > 0.0001f) // TODO try to find machine epsilon
+	{
+		// calculating t by dotting the vector between the position of the plane and
+		// the origin of the ray with the object normal and deviding it by the
+		// denominator
+		const auto t = (m_v3Position - rPrimaryRay.m_v3Origin).DotWith(m_v3Normal) / denom;
+		if (t > 0)
+		{
+
+			
+			// calculating the point of intersection by calculating the displacement from
+			// the origin by multiplying t (a scalar) with the (normalized) direction
+			vec3 pos = rPrimaryRay.m_v3Origin + rPrimaryRay.m_v3Direction * t;
+			
+
+			// check if distance from origin of ray is smaller than the one already stored
+			// in the ray. If yes, set distance of ray to tempDistance && set intersection
+			// data to new intersection data
+			const float fTempDistance = (pos - rPrimaryRay.m_v3Origin).GetMagnitude();
+			if (fTempDistance < rPrimaryRay.m_fDistance)
+			{
+				rPrimaryRay.m_fDistance = fTempDistance;
+
+				const vec3 v3IntersectNormal = GetIntersectionNormal(pos);
+				
+				isdData = {true, pos, v3IntersectNormal, m_maObjectMaterial};
+				
+				// change color depending on coordinates of intersection
+				if (1 & (static_cast<int>((pos.x + 100000)) + static_cast<int>(pos.z + 100000)))
+				{
+					isdData.m_maTransportedMaterial.m_v3Color = vec3{ 0.5f,0.5f,0.5f };
+				}
+				else isdData.m_maTransportedMaterial.m_v3Color = vec3{ 1.0f,1.0f,1.0f };
+			}
+
+			isdData.m_bIntersectionDetected = true;
+			return true;
+		}
+	}
+
+	isdData.m_bIntersectionDetected = false;
+	return false;
+}
+
+vec3 plane::GetIntersectionNormal(vec3& intersectionPoint)
+{
+	return m_v3Normal;
+}
+
+vec3 plane::GetScreenspaceCoordinate(vec3& v3Origin, vec3& v3Left, vec3& v3Right, vec3& v3Up, vec3& v3Down, int iScrwidth, int iScrheight, float fViewportWidth, float& RadiusInPixels)
+{
+	return {};
+}
+@
+
+
+1.229432
+log
+@@
+text
+@d67 1
+a67 2
+vec3 plane::GetScreenspaceCoordinate(vec3& v3Origin, vec3& v3Left, vec3& v3Right, vec3& v3Up, vec3& v3Down,
+	int iScrwidth, int iScrheight)
+@
+
+
+1.229270
+log
+@@
+text
+@d66 6
+@
+
+
+1.228821
+log
+@@
+text
+@d10 2
+@
+
+
+1.224939
+log
+@@
+text
+@d9 1
+a9 1
+	m_maObjectMaterial = { {0,0,0}, 0.5 };
+a28 8
+
+			
+			// change color depending on coordinates of intersection
+			if (1 & (static_cast<int>((pos.x + 1000)) + static_cast<int>(pos.z + 1000)))
+			{
+				m_maObjectMaterial.m_v3Color = vec3{0.5,0.5,0.5};
+			}
+			else m_maObjectMaterial.m_v3Color = vec3{ 1,1,1 };
+d40 1
+d42 7
+@
+
+
+1.222420
+log
+@@
+text
+@d9 1
+a9 1
+	m_maObjectMaterial = { {0,0,0}, 0 };
+d16 1
+a16 1
+	if (fabsf(denom) > 0.0001f) //try to find machine epsilon
+d18 3
+a20 3
+		//calculating t by dotting the vector between the position of the plane and
+		//the origin of the ray with the object normal and deviding it by the
+		//denominator
+d26 2
+a27 2
+			//calculating the point of intersection by calculating the displacement from
+			//the origin by multiplying t (a scalar) with the (normalized) direction
+d31 1
+a31 1
+			//change color depending on coordinates of intersection
+d34 1
+a34 1
+				m_maObjectMaterial.m_v3Color = vec3{0,0,0};
+d39 3
+a41 3
+			//check if distance from origin of ray is smaller than the one already stored
+			//in the ray. If yes, set distance of ray to tempDistance && set intersection
+			//data to new intersection data
+@
+
+
+1.222395
+log
+@@
+text
+@d48 1
+a48 1
+				isdData = {true, pos, v3IntersectNormal, m_maObjectMaterial.m_v3Color};
+@
+
+
+1.220586
+log
+@@
+text
+@d9 2
+a10 2
+	m_v3Color = { 1.0f, 0.0f, 0.0f };
+}
+d15 1
+d18 3
+d24 6
+a29 1
+			const auto pos = rPrimaryRay.m_v3Origin + rPrimaryRay.m_v3Direction * t;
+d31 1
+d34 1
+a34 1
+				m_v3Color = vec3{0,0,0};
+d36 2
+a37 1
+			else m_v3Color = vec3{ 1,1,1 };
+d39 3
+d46 3
+a48 3
+				isdData.m_v3Color = m_v3Color;
+				isdData.m_v3IntersectionPoint = pos;
+				isdData.m_bIntersectionDetected = true;
+d51 1
+d56 1
+@
+
+
+1.219891
+log
+@@
+text
+@d15 1
+a15 1
+	if (fabsf(denom) > 0.0001f)
+d32 1
+a32 1
+				rPrimaryRay.m_v3Color = m_v3Color;
+d34 1
+d44 1
+a44 1
+vec3 plane::getIntersectionNormal(vec3& intersectionPoint)
+@
+
+
+1.219812
+log
+@@
+text
+@d22 1
+a22 1
+			if (1 & (static_cast<int>(2 * (pos.x + 1000)) + static_cast<int>(pos.z + 1000)))
+@
+
+
+1.219559
+log
+@@
+text
+@d32 1
+a32 1
+				isdData.m_v3TransportedColor = m_v3Color;
+d42 5
+@
+
+
+1.219071
+log
+@@
+text
+@d12 1
+a12 1
+intersectionData plane::RayIntersection(ray& rPrimaryRay)
+d29 6
+a34 1
+			if (fTempDistance < rPrimaryRay.m_fDistance) rPrimaryRay.m_fDistance = fTempDistance;
+d36 1
+a36 1
+			return {true, pos, m_v3Color};
+d40 1
+a40 1
+	return { false, vec3{}, vec3{} };
+@
+
+
+1.218883
+log
+@@
+text
+@d12 1
+a12 1
+bool plane::RayIntersection(ray& rPrimaryRay)
+d31 1
+a31 1
+			return true;
+d35 1
+a35 1
+	return false;
+@
+
+
+1.218296
+log
+@@
+text
+@d4 1
+a4 1
+plane::plane(vec3 aPosition, vec3 aNormal, float aLength)
+d8 1
+a8 1
+	m_fLength = aLength;
+@
+
+
+1.218287
+log
+@@
+text
+@d2 1
+a2 1
+#include "plane.h"
+@
+
+
+1.218002
+log
+@@
+text
+@d22 1
+a22 1
+			if (1 & ((int)(2 * (pos.x + 1000)) + (int)(pos.z + 1000)))
+d28 3
+@
+
+
+1.217806
+log
+@@
+text
+@d14 1
+a14 2
+
+	float denom = m_v3Normal.DotWith(rPrimaryRay.m_v3Direction);
+d17 1
+a17 1
+		float t = (m_v3Position - rPrimaryRay.m_v3Origin).DotWith(m_v3Normal) / denom;
+d20 1
+a20 1
+			vec3 pos = rPrimaryRay.m_v3Origin + rPrimaryRay.m_v3Direction * t;
+d22 1
+a22 1
+			if ( (int(pos.x) % 2 == 0) ^ ((int(pos.z) % 2) == 0) ) //(int)(floor(pos.x) + floor(pos.z)) % 2 == 0
+@
+
+
+1.217230
+log
+@@
+text
+@d22 2
+a23 2
+
+			if ( (int(pos.x) % 2 == 0) ^ (int(pos.z) % 2 != 0) )
+@

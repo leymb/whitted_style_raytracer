@@ -1,0 +1,44 @@
+head     1.219894;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.219894
+date     2020.12.11.17.05.24;  author p4;  state Exp;
+branches ;
+next     1.219624;
+
+1.219624
+date     2020.12.10.16.35.37;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.219894
+log
+@@
+text
+@#pragma once
+struct lightSource
+{
+	vec3 m_v3Position{};
+	vec3 m_v3Direction{};
+	vec3 m_v3LightColor{};
+	
+	float m_fLightStrength{1.0f};
+};
+
+@
+
+
+1.219624
+log
+@@
+text
+@d6 2
+@

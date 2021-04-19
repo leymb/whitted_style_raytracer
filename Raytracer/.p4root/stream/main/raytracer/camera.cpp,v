@@ -1,0 +1,186 @@
+head     1.230304;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.230304
+date     2021.01.20.19.11.22;  author p4;  state Exp;
+branches ;
+next     1.218495;
+
+1.218495
+date     2020.12.08.12.22.35;  author p4;  state Exp;
+branches ;
+next     1.218296;
+
+1.218296
+date     2020.12.07.17.32.15;  author p4;  state Exp;
+branches ;
+next     1.218228;
+
+1.218228
+date     2020.12.07.16.19.00;  author p4;  state Exp;
+branches ;
+next     1.217228;
+
+1.217228
+date     2020.12.03.11.17.37;  author p4;  state Exp;
+branches ;
+next     1.216914;
+
+1.216914
+date     2020.12.02.15.57.32;  author p4;  state Exp;
+branches ;
+next     1.216771;
+
+1.216771
+date     2020.12.02.14.28.53;  author p4;  state Exp;
+branches ;
+next     1.216643;
+
+1.216643
+date     2020.12.02.12.17.03;  author p4;  state Exp;
+branches ;
+next     1.216302;
+
+1.216302
+date     2020.12.01.16.21.36;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.230304
+log
+@@
+text
+@#include "precomp.h"
+
+
+camera::camera(vec3 aPosition, vec3 aViewDirection)
+{
+	m_v3Direction = aViewDirection;
+	m_v3Direction.Normalize();
+
+	m_v3Position = aPosition;
+
+	// normally c = cameraPos + distance * direction, but in this case, distance = 1
+	vec3 c = m_v3Position + m_v3Direction;
+
+	m_v3ViewportP0 = c + vec3(-1, 1, -2);
+	m_v3ViewportP1 = c + vec3(1, 1, -2);
+	m_v3ViewportP2 = c + vec3(-1, -1, -2);
+
+
+}
+
+ray camera::CreateRay(float u, float v)
+{
+	//creating ray
+	const vec3 v3Direction = { m_v3ViewportP0 + ((m_v3ViewportP1 - m_v3ViewportP0) * u) + ((m_v3ViewportP2 - m_v3ViewportP0) * v) };
+	ray rPrimaryRay{ m_v3Position, v3Direction};
+
+	// filling in variables used for screenspace grid
+	rPrimaryRay.bIsPrimaryRay = true;
+	
+	return rPrimaryRay;
+}
+
+@
+
+
+1.218495
+log
+@@
+text
+@d23 1
+d25 5
+a29 1
+	const ray rPrimaryRay{ m_v3Position, v3Direction};
+@
+
+
+1.218296
+log
+@@
+text
+@d14 3
+a16 3
+	m_v3ViewportP0 = c + vec3(-1, 1, 2);
+	m_v3ViewportP1 = c + vec3(1, 1, 2);
+	m_v3ViewportP2 = c + vec3(-1, -1, 2);
+@
+
+
+1.218228
+log
+@@
+text
+@d2 1
+a2 1
+#include "camera.h"
+@
+
+
+1.217228
+log
+@@
+text
+@d14 3
+a16 3
+	m_v3ViewportP0 = c + vec3(-1, 1, 0);
+	m_v3ViewportP1 = c + vec3(1, 1, 1);
+	m_v3ViewportP2 = c + vec3(-1, -1, 0);
+d23 2
+a24 2
+	vec3 v3Direction = { m_v3ViewportP0 + ((m_v3ViewportP1 - m_v3ViewportP0) * u) + ((m_v3ViewportP2 - m_v3ViewportP0) * v) };
+	ray rPrimaryRay{ m_v3Position, v3Direction, 1.0 };
+@
+
+
+1.216914
+log
+@@
+text
+@d7 2
+@
+
+
+1.216771
+log
+@@
+text
+@d1 1
+@
+
+
+1.216643
+log
+@@
+text
+@d3 1
+a3 1
+camera::camera(vec3 aPosition, vec3 aDirection)
+d5 1
+a5 1
+	m_v3Direction = aDirection;
+d14 9
+@
+
+
+1.216302
+log
+@@
+text
+@a6 1
+}
+d8 6
+a13 2
+camera::~camera()
+{
+d15 1
+@

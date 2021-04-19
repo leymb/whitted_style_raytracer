@@ -1,0 +1,58 @@
+head     1.227789;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.227789
+date     2021.01.14.15.16.32;  author p4;  state Exp;
+branches ;
+next     1.222449;
+
+1.222449
+date     2020.12.18.15.25.10;  author p4;  state Exp;
+branches ;
+next     1.222395;
+
+1.222395
+date     2020.12.18.13.16.08;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.227789
+log
+@@
+text
+@#include "precomp.h"
+
+material::material(vec3 aColor, float aReflectionIndex, float aRefractionIndex, float aDiffusionValue)
+	: m_v3Color(aColor), m_fReflectionIndex(aReflectionIndex), m_fRefractionIndex(aRefractionIndex), fDiffusion(aDiffusionValue)
+{
+	
+}
+@
+
+
+1.222449
+log
+@@
+text
+@d3 2
+a4 1
+material::material(vec3 aColor, float aReflectionIndex, float aDiffusionValue) : m_v3Color(aColor), m_fReflectionIndex(aReflectionIndex), fDiffusion(aDiffusionValue)
+@
+
+
+1.222395
+log
+@@
+text
+@d3 1
+a3 1
+material::material(vec3 aColor, float aReflectionIndex) : m_v3Color(aColor), m_fReflectionIndex(aReflectionIndex)
+@

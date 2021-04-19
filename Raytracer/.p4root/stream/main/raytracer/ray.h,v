@@ -1,0 +1,274 @@
+head     1.230304;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.230304
+date     2021.01.20.19.11.22;  author p4;  state Exp;
+branches ;
+next     1.228856;
+
+1.228856
+date     2021.01.18.17.19.36;  author p4;  state Exp;
+branches ;
+next     1.224939;
+
+1.224939
+date     2021.01.08.14.26.32;  author p4;  state Exp;
+branches ;
+next     1.224147;
+
+1.224147
+date     2021.01.06.17.02.48;  author p4;  state Exp;
+branches ;
+next     1.222025;
+
+1.222025
+date     2020.12.17.12.41.53;  author p4;  state Exp;
+branches ;
+next     1.220586;
+
+1.220586
+date     2020.12.15.12.56.33;  author p4;  state Exp;
+branches ;
+next     1.219891;
+
+1.219891
+date     2020.12.11.17.02.15;  author p4;  state Exp;
+branches ;
+next     1.219559;
+
+1.219559
+date     2020.12.10.15.33.41;  author p4;  state Exp;
+branches ;
+next     1.218296;
+
+1.218296
+date     2020.12.07.17.32.15;  author p4;  state Exp;
+branches ;
+next     1.218287;
+
+1.218287
+date     2020.12.07.17.17.07;  author p4;  state Exp;
+branches ;
+next     1.217542;
+
+1.217542
+date     2020.12.03.16.53.34;  author p4;  state Exp;
+branches ;
+next     1.216914;
+
+1.216914
+date     2020.12.02.15.57.32;  author p4;  state Exp;
+branches ;
+next     1.215304;
+
+1.215304
+date     2020.11.27.15.05.29;  author p4;  state Exp;
+branches ;
+next     1.215130;
+
+1.215130
+date     2020.11.26.17.57.31;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.230304
+log
+@@
+text
+@#pragma once
+
+
+struct ray
+{
+	ray(vec3 aOrigin = {0,0,0}, vec3 aDirection = {0,0,1});
+
+	// basic members defining a ray
+	vec3 m_v3Origin{};
+	vec3 m_v3Direction{ 0,0,1 };
+
+	// tracks if ray is a primary ray && the pixel it is sent through
+	// used in determining which intersect to use
+	bool bIsPrimaryRay = false;
+	int iPixelX = -1;
+	int iPixelY = -1;
+	
+
+	// members used in determining intersections with primitives
+	int m_iNearestPrimitiveIndex = -404;
+	float m_fDistance = 10000000;
+
+	// refraction index of material the ray is in
+	float m_fCurrentRefractionIndex = 1.10f;
+
+	bool m_bInPrimitive = false;
+};
+
+@
+
+
+1.228856
+log
+@@
+text
+@d12 7
+@
+
+
+1.224939
+log
+@@
+text
+@d17 3
+a19 1
+	float m_fCurrentRefractionIndex = 1.1;
+@
+
+
+1.224147
+log
+@@
+text
+@d6 1
+a6 1
+	ray(vec3 aOrigin = {0,0,0}, vec3 aDirection = {0,-0,0});
+d8 1
+d11 3
+a13 1
+	
+d16 1
+a16 1
+	//refraction index of material the ray is in
+a17 2
+	
+	int m_iNearestPrimitiveIndex = -404;
+@
+
+
+1.222025
+log
+@@
+text
+@d12 5
+a16 1
+	int m_iNearestPrimitiveIndex = 404;
+@
+
+
+1.220586
+log
+@@
+text
+@d6 1
+a6 1
+	ray(vec3 aOrigin, vec3 aDirection);
+@
+
+
+1.219891
+log
+@@
+text
+@a9 1
+	vec3 m_v3Color{};
+@
+
+
+1.219559
+log
+@@
+text
+@d10 1
+@
+
+
+1.218296
+log
+@@
+text
+@d11 1
+a11 1
+	float m_fDistance = 0;
+@
+
+
+1.218287
+log
+@@
+text
+@d2 1
+a2 1
+#include "vec3.h"
+@
+
+
+1.217542
+log
+@@
+text
+@d6 1
+a6 1
+	ray(vec3 aOrigin, vec3 aDirection, float aDistance);
+d10 1
+d12 1
+@
+
+
+1.216914
+log
+@@
+text
+@d8 3
+a10 3
+	vec3 origin{};
+	vec3 direction{ 0,0,1 };
+	float distance = 0;
+@
+
+
+1.215304
+log
+@@
+text
+@d2 2
+a3 2
+#include "../../vec3.h"
+#include "include/math/point.h"
+d6 1
+a6 2
+	ray(vec3* aOrigin, vec3 aDirection, float aDistance);
+	~ray();
+d8 2
+a9 2
+	vec3* origin = nullptr;
+	vec3 direction = { 0,0,0 };
+@
+
+
+1.215130
+log
+@@
+text
+@d4 1
+a4 1
+class ray
+d6 1
+a6 3
+public:
+	ray();
+	ray(point* o, vec3 d);
+d9 3
+a11 5
+	point* origin;
+	vec3 direction = { 0.0, 0.0, 0.0 };
+
+private:
+
+@

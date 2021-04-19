@@ -1,0 +1,253 @@
+head     1.229950;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.229950
+date     2021.01.20.14.47.20;  author p4;  state Exp;
+branches ;
+next     1.229432;
+
+1.229432
+date     2021.01.19.16.13.44;  author p4;  state Exp;
+branches ;
+next     1.229270;
+
+1.229270
+date     2021.01.19.14.03.33;  author p4;  state Exp;
+branches ;
+next     1.224939;
+
+1.224939
+date     2021.01.08.14.26.32;  author p4;  state Exp;
+branches ;
+next     1.222395;
+
+1.222395
+date     2020.12.18.13.16.08;  author p4;  state Exp;
+branches ;
+next     1.220586;
+
+1.220586
+date     2020.12.15.12.56.33;  author p4;  state Exp;
+branches ;
+next     1.219812;
+
+1.219812
+date     2020.12.11.13.37.52;  author p4;  state Exp;
+branches ;
+next     1.219559;
+
+1.219559
+date     2020.12.10.15.33.41;  author p4;  state Exp;
+branches ;
+next     1.219071;
+
+1.219071
+date     2020.12.09.15.20.25;  author p4;  state Exp;
+branches ;
+next     1.218296;
+
+1.218296
+date     2020.12.07.17.32.15;  author p4;  state Exp;
+branches ;
+next     1.217542;
+
+1.217542
+date     2020.12.03.16.53.34;  author p4;  state Exp;
+branches ;
+next     1.216914;
+
+1.216914
+date     2020.12.02.15.57.32;  author p4;  state Exp;
+branches ;
+next     1.216328;
+
+1.216328
+date     2020.12.01.16.37.51;  author p4;  state Exp;
+branches ;
+next     1.215536;
+
+1.215536
+date     2020.11.30.11.39.53;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.229950
+log
+@@
+text
+@#pragma once
+#include "material.h"
+
+
+struct ray;
+struct intersectionData;
+
+class primitive
+{
+public:
+
+	// functions
+	virtual bool RayIntersection(ray& rPrimaryRay, intersectionData& isdData) = 0;
+	virtual vec3 GetIntersectionNormal(vec3& intersectionPoint);
+	virtual vec3 GetScreenspaceCoordinate(vec3& v3Origin, vec3& v3Left, vec3& v3Right, vec3& v3Up, vec3& v3Down, int iScrwidth, int iScrheight, float fViewportWidth, float& RadiusInPixels) = 0;
+
+	// basic members defining a primitive
+	vec3 m_v3Position = { 0,0,0 };
+	material m_maObjectMaterial = {};
+
+	int m_iPrimitiveType = 0;
+
+	enum m_eTypes
+	{
+		planar = 1,
+		spherical = 2
+	};
+};
+
+@
+
+
+1.229432
+log
+@@
+text
+@d15 1
+a15 1
+	virtual vec3 GetScreenspaceCoordinate(vec3& v3Origin, vec3& v3Left, vec3& v3Right, vec3& v3Up, vec3& v3Down, int iScrwidth, int iScrheight) = 0;
+@
+
+
+1.229270
+log
+@@
+text
+@d15 1
+@
+
+
+1.224939
+log
+@@
+text
+@d19 8
+@
+
+
+1.222395
+log
+@@
+text
+@a10 2
+	vec3 m_v3Position = { 0,0,0 };
+	material m_maObjectMaterial = {};
+d12 1
+d15 4
+@
+
+
+1.220586
+log
+@@
+text
+@d2 1
+d12 1
+a12 1
+	vec3 m_v3Color = { 1,0,0 };
+@
+
+
+1.219812
+log
+@@
+text
+@d14 1
+a14 1
+	virtual vec3 getIntersectionNormal(vec3& intersectionPoint);
+@
+
+
+1.219559
+log
+@@
+text
+@d14 1
+@
+
+
+1.219071
+log
+@@
+text
+@d13 1
+a13 1
+	virtual intersectionData RayIntersection(ray& rPrimaryRay) = 0;
+@
+
+
+1.218296
+log
+@@
+text
+@d5 1
+d13 1
+a13 1
+	virtual bool RayIntersection(ray& rPrimaryRay) = 0;
+@
+
+
+1.217542
+log
+@@
+text
+@d2 1
+a2 1
+#include "vec3.h"
+@
+
+
+1.216914
+log
+@@
+text
+@d12 1
+a12 1
+	virtual bool RayIntersection(ray& rPrimaryRay);
+@
+
+
+1.216328
+log
+@@
+text
+@d1 2
+a2 2
+#include "../Raytracer/vec3.h"
+#include "../Raytracer/ray.h"
+d4 2
+a8 3
+
+	primitive();
+	~primitive();
+@
+
+
+1.215536
+log
+@@
+text
+@d10 2
+a11 2
+	vec3 v3Position = { 0,0,0 };
+	vec3 v3Color = { 1,0,0 };
+d13 1
+a13 1
+	virtual bool RayIntersection(ray& rPrimaryRay) = 0;
+@

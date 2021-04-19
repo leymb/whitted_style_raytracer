@@ -1,0 +1,596 @@
+head     1.233374;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.233374
+date     2021.01.29.14.48.06;  author p4;  state Exp;
+branches ;
+next     1.232999;
+
+1.232999
+date     2021.01.27.18.19.11;  author p4;  state Exp;
+branches ;
+next     1.232683;
+
+1.232683
+date     2021.01.26.17.01.50;  author p4;  state Exp;
+branches ;
+next     1.231282;
+
+1.231282
+date     2021.01.22.16.35.13;  author p4;  state Exp;
+branches ;
+next     1.231139;
+
+1.231139
+date     2021.01.22.13.16.13;  author p4;  state Exp;
+branches ;
+next     1.229980;
+
+1.229980
+date     2021.01.20.14.56.55;  author p4;  state Exp;
+branches ;
+next     1.222449;
+
+1.222449
+date     2020.12.18.15.25.10;  author p4;  state Exp;
+branches ;
+next     1.219891;
+
+1.219891
+date     2020.12.11.17.02.15;  author p4;  state Exp;
+branches ;
+next     1.218958;
+
+1.218958
+date     2020.12.09.13.25.53;  author p4;  state Exp;
+branches ;
+next     1.218883;
+
+1.218883
+date     2020.12.09.11.22.03;  author p4;  state Exp;
+branches ;
+next     1.217806;
+
+1.217806
+date     2020.12.04.16.33.49;  author p4;  state Exp;
+branches ;
+next     1.216914;
+
+1.216914
+date     2020.12.02.15.57.32;  author p4;  state Exp;
+branches ;
+next     1.215370;
+
+1.215370
+date     2020.11.27.17.43.16;  author p4;  state Exp;
+branches ;
+next     1.214106;
+
+1.214106
+date     2020.11.23.17.16.14;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.233374
+log
+@@
+text
+@<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\misc\camera.cpp" />
+    <ClCompile Include="src\misc\cell.cpp" />
+    <ClCompile Include="src\misc\intersectiondata.cpp" />
+    <ClCompile Include="src\misc\lightsource.cpp" />
+    <ClCompile Include="src\misc\material.cpp" />
+    <ClCompile Include="src\misc\rgbcolor.cpp" />
+    <ClCompile Include="src\precomp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">precomp.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">precomp.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\primitives\plane.cpp" />
+    <ClCompile Include="src\primitives\primitive.cpp" />
+    <ClCompile Include="src\primitives\sphere.cpp" />
+    <ClCompile Include="src\ray.cpp" />
+    <ClCompile Include="src\Renderer.cpp" />
+    <ClCompile Include="src\scenes\scene.cpp" />
+    <ClCompile Include="src\scenes\testscene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mathm\mathm.vcxproj">
+      <Project>{bee11cfa-2dd9-4d9c-8bad-8d771340be6c}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\misc\camera.h" />
+    <ClInclude Include="include\misc\cell.h" />
+    <ClInclude Include="include\misc\intersectiondata.h" />
+    <ClInclude Include="include\misc\lightsource.h" />
+    <ClInclude Include="include\misc\material.h" />
+    <ClInclude Include="include\misc\rgbcolor.h" />
+    <ClInclude Include="include\precomp.h" />
+    <ClInclude Include="include\primitives\plane.h" />
+    <ClInclude Include="include\primitives\primitive.h" />
+    <ClInclude Include="include\primitives\sphere.h" />
+    <ClInclude Include="include\ray.h" />
+    <ClInclude Include="include\Renderer.h" />
+    <ClInclude Include="include\scenes\scene.h" />
+    <ClInclude Include="include\scenes\testscene.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{1cecf366-619c-4325-a753-c334c20a4cee}</ProjectGuid>
+    <RootNamespace>Raytracer</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)include;$(ProjectDir)SDL2\include;$(SolutionDir)mathm\include;$(ProjectDir)SDL2\include;$(SolutionDir)/mathm/include;$(ProjectDir)/include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)include;$(ProjectDir)SDL2\include;$(SolutionDir)mathm\include;$(SolutionDir)/mathm/include;$(ProjectDir)/include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)/mathm/include;$(ProjectDir)/include;$(ProjectDir)SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)/mathm/include;$(ProjectDir)/include;$(ProjectDir)SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(ProjectDir)SDL2\lib\x86\SDL2.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(ProjectDir)SDL2\lib\x86\SDL2.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precomp.h</PrecompiledHeaderFile>
+      <OpenMPSupport>true</OpenMPSupport>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(ProjectDir)SDL2\lib\x64\SDL2.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precomp.h</PrecompiledHeaderFile>
+      <OpenMPSupport>true</OpenMPSupport>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(ProjectDir)SDL2\lib\x64\SDL2.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>@
+
+
+1.232999
+log
+@@
+text
+@d155 1
+a155 1
+      <Command>xcopy /y /d $(ProjectDir)SDL2\lib\x86\SDL2.dll $(OutDir)</Command>
+d179 1
+a179 1
+      <Command>xcopy /y /d $(ProjectDir)SDL2\lib\x86\SDL2.dll $(OutDir)</Command>
+d199 1
+a199 1
+      <Command>xcopy /y /d $(ProjectDir)SDL2\lib\x64\SDL2.dll $(OutDir)</Command>
+d223 1
+a223 1
+      <Command>xcopy /y /d $(ProjectDir)SDL2\lib\x64\SDL2.dll $(OutDir)</Command>
+@
+
+
+1.232683
+log
+@@
+text
+@d144 2
+a145 2
+      <AdditionalIncludeDirectories>D:\BUAS\Perforce\Melvin200937\Year_1\Block_B\Raytracer\Raytracer\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+d166 2
+a167 2
+      <AdditionalIncludeDirectories>D:\BUAS\Perforce\Melvin200937\Year_1\Block_B\Raytracer\Raytracer\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+d191 1
+a191 1
+      <TreatWarningAsError>false</TreatWarningAsError>
+d213 1
+a213 1
+      <TreatWarningAsError>false</TreatWarningAsError>
+@
+
+
+1.231282
+log
+@@
+text
+@d120 2
+a121 1
+    <IncludePath>$(SolutionDir)/mathm/include;$(ProjectDir)/include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+d125 2
+a126 1
+    <IncludePath>$(SolutionDir)/mathm/include;$(ProjectDir)/include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+d140 1
+a140 1
+      <WarningLevel>Level3</WarningLevel>
+d145 2
+d151 1
+a151 1
+      <AdditionalLibraryDirectories>D:\BUAS\Perforce\Melvin200937\Year_1\Block_B\Raytracer\Raytracer\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+d154 3
+d160 1
+a160 1
+      <WarningLevel>Level3</WarningLevel>
+d167 2
+d175 1
+a175 1
+      <AdditionalLibraryDirectories>D:\BUAS\Perforce\Melvin200937\Year_1\Block_B\Raytracer\Raytracer\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+d178 3
+d184 1
+a184 1
+      <WarningLevel>Level3</WarningLevel>
+d191 1
+d198 3
+d204 1
+a204 1
+      <WarningLevel>Level3</WarningLevel>
+d213 1
+d222 3
+@
+
+
+1.231139
+log
+@@
+text
+@a21 4
+    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="cell.cpp" />
+    <ClCompile Include="intersectiondata.cpp" />
+    <ClCompile Include="lightsource.cpp" />
+d23 11
+a33 3
+    <ClCompile Include="material.cpp" />
+    <ClCompile Include="plane.cpp" />
+    <ClCompile Include="precomp.cpp">
+d37 7
+a43 23
+    <ClCompile Include="ray.cpp" />
+    <ClCompile Include="primitive.cpp" />
+    <ClCompile Include="renderer.cpp" />
+    <ClCompile Include="rgbcolor.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="sphere.cpp" />
+    <ClCompile Include="testscene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="cell.h" />
+    <ClInclude Include="intersectiondata.h" />
+    <ClInclude Include="lightsource.h" />
+    <ClInclude Include="material.h" />
+    <ClInclude Include="plane.h" />
+    <ClInclude Include="precomp.h" />
+    <ClInclude Include="ray.h" />
+    <ClInclude Include="primitive.h" />
+    <ClInclude Include="renderer.h" />
+    <ClInclude Include="rgbcolor.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="sphere.h" />
+    <ClInclude Include="testscene.h" />
+d50 16
+d120 1
+d124 1
+d128 1
+a128 1
+    <IncludePath>$(ProjectDir)SDL2\include;$(IncludePath)</IncludePath>
+d133 1
+a133 1
+    <IncludePath>$(ProjectDir)SDL2\include;$(IncludePath)</IncludePath>
+@
+
+
+1.229980
+log
+@@
+text
+@a27 1
+    <ClCompile Include="mathm.cpp" />
+a39 1
+    <ClCompile Include="vec3.cpp" />
+a46 1
+    <ClInclude Include="mathm.h" />
+a55 1
+    <ClInclude Include="vec3.h" />
+d57 5
+d122 2
+a123 2
+    <IncludePath>$(ProjectDir)SDL2\include;$(ProjectDir)MathM\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2\lib\x64;$(ProjectDir)mathm\lib\x64;$(LibraryPath)</LibraryPath>
+d127 2
+a128 2
+    <IncludePath>$(ProjectDir)SDL2\include;$(ProjectDir)MathM\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2\lib\x64;$(ProjectDir)mathm\lib\x64;$(LibraryPath)</LibraryPath>
+d177 1
+a177 1
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;MathM.lib;%(AdditionalDependencies)</AdditionalDependencies>
+d197 1
+a197 1
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;MathM.lib;%(AdditionalDependencies)</AdditionalDependencies>
+@
+
+
+1.222449
+log
+@@
+text
+@d23 1
+d40 1
+d45 1
+d58 1
+d121 2
+a122 2
+    <IncludePath>$(ProjectDir)SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+d126 2
+a127 2
+    <IncludePath>$(ProjectDir)SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+d171 1
+d176 1
+a176 1
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+d189 1
+d196 1
+a196 1
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+@
+
+
+1.219891
+log
+@@
+text
+@d26 1
+d45 1
+@
+
+
+1.218958
+log
+@@
+text
+@d23 2
+d42 2
+@
+
+
+1.218883
+log
+@@
+text
+@d111 2
+a112 2
+    <IncludePath>$(ProjectDir)Raytracer\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Raytracer\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+d116 2
+a117 2
+    <IncludePath>$(ProjectDir)Raytracer\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Raytracer\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+@
+
+
+1.217806
+log
+@@
+text
+@d33 1
+d46 1
+d111 2
+a112 2
+    <IncludePath>D:\BUAS\Perforce\Melvin200937\Year_1\Block_B\Raytracer\Raytracer\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\BUAS\Perforce\Melvin200937\Year_1\Block_B\Raytracer\Raytracer\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+d116 2
+a117 2
+    <IncludePath>D:\BUAS\Perforce\Melvin200937\Year_1\Block_B\Raytracer\Raytracer\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\BUAS\Perforce\Melvin200937\Year_1\Block_B\Raytracer\Raytracer\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+@
+
+
+1.216914
+log
+@@
+text
+@d24 1
+d32 2
+a33 1
+    <ClCompile Include="Renderer.cpp" />
+d39 1
+a39 2
+    <ClInclude Include="include\math\point.h" />
+    <ClInclude Include="main.h" />
+d44 2
+a45 1
+    <ClInclude Include="Renderer.h" />
+@
+
+
+1.215370
+log
+@@
+text
+@d22 1
+d24 5
+a29 1
+    <ClCompile Include="Raytracer.cpp" />
+d31 1
+d36 1
+d39 2
+a41 1
+    <ClInclude Include="Raytracer.h" />
+d43 1
+d155 2
+d172 2
+@
+
+
+1.214106
+log
+@@
+text
+@d23 14
+@

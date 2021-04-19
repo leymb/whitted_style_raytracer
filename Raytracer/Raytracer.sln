@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Raytracer", "Raytracer\Raytracer.vcxproj", "{1CECF366-619C-4325-A753-C334C20A4CEE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mathm", "mathm\mathm.vcxproj", "{BEE11CFA-2DD9-4D9C-8BAD-8D771340BE6C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestMath", "UnitTestMath\UnitTestMath.vcxproj", "{CCC00F6F-CA3C-4203-AAFB-7A7B2BAF21B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CECF366-619C-4325-A753-C334C20A4CEE}.Debug|x64.ActiveCfg = Debug|x64
+		{1CECF366-619C-4325-A753-C334C20A4CEE}.Debug|x64.Build.0 = Debug|x64
+		{1CECF366-619C-4325-A753-C334C20A4CEE}.Debug|x86.ActiveCfg = Debug|Win32
+		{1CECF366-619C-4325-A753-C334C20A4CEE}.Debug|x86.Build.0 = Debug|Win32
+		{1CECF366-619C-4325-A753-C334C20A4CEE}.Release|x64.ActiveCfg = Release|x64
+		{1CECF366-619C-4325-A753-C334C20A4CEE}.Release|x64.Build.0 = Release|x64
+		{1CECF366-619C-4325-A753-C334C20A4CEE}.Release|x86.ActiveCfg = Release|Win32
+		{1CECF366-619C-4325-A753-C334C20A4CEE}.Release|x86.Build.0 = Release|Win32
+		{BEE11CFA-2DD9-4D9C-8BAD-8D771340BE6C}.Debug|x64.ActiveCfg = Debug|x64
+		{BEE11CFA-2DD9-4D9C-8BAD-8D771340BE6C}.Debug|x64.Build.0 = Debug|x64
+		{BEE11CFA-2DD9-4D9C-8BAD-8D771340BE6C}.Debug|x86.ActiveCfg = Debug|Win32
+		{BEE11CFA-2DD9-4D9C-8BAD-8D771340BE6C}.Debug|x86.Build.0 = Debug|Win32
+		{BEE11CFA-2DD9-4D9C-8BAD-8D771340BE6C}.Release|x64.ActiveCfg = Release|x64
+		{BEE11CFA-2DD9-4D9C-8BAD-8D771340BE6C}.Release|x64.Build.0 = Release|x64
+		{BEE11CFA-2DD9-4D9C-8BAD-8D771340BE6C}.Release|x86.ActiveCfg = Release|Win32
+		{BEE11CFA-2DD9-4D9C-8BAD-8D771340BE6C}.Release|x86.Build.0 = Release|Win32
+		{CCC00F6F-CA3C-4203-AAFB-7A7B2BAF21B6}.Debug|x64.ActiveCfg = Debug|x64
+		{CCC00F6F-CA3C-4203-AAFB-7A7B2BAF21B6}.Debug|x64.Build.0 = Debug|x64
+		{CCC00F6F-CA3C-4203-AAFB-7A7B2BAF21B6}.Debug|x86.ActiveCfg = Debug|Win32
+		{CCC00F6F-CA3C-4203-AAFB-7A7B2BAF21B6}.Debug|x86.Build.0 = Debug|Win32
+		{CCC00F6F-CA3C-4203-AAFB-7A7B2BAF21B6}.Release|x64.ActiveCfg = Release|x64
+		{CCC00F6F-CA3C-4203-AAFB-7A7B2BAF21B6}.Release|x64.Build.0 = Release|x64
+		{CCC00F6F-CA3C-4203-AAFB-7A7B2BAF21B6}.Release|x86.ActiveCfg = Release|Win32
+		{CCC00F6F-CA3C-4203-AAFB-7A7B2BAF21B6}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1135F1B1-ABC8-4764-A4BF-C81FBD8E8B3A}
+	EndGlobalSection
+EndGlobal

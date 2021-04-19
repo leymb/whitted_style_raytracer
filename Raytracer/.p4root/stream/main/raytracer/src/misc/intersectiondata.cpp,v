@@ -1,0 +1,27 @@
+head     1.231282;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.231282
+date     2021.01.22.16.35.13;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.231282
+log
+@@
+text
+@#include "precomp.h"
+intersectionData::intersectionData(bool aBool, vec3 aIntersectionPoint, vec3 aIntersectionNormal, material maAMaterial)
+	: m_bIntersectionDetected(aBool), m_v3IntersectionPoint(aIntersectionPoint),
+	  m_v3IntersectionNormal(aIntersectionNormal), m_maTransportedMaterial(maAMaterial)
+{
+	
+}@

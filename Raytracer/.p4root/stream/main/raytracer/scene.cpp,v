@@ -1,0 +1,182 @@
+head     1.226231;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.226231
+date     2021.01.12.16.10.53;  author p4;  state Exp;
+branches ;
+next     1.225754;
+
+1.225754
+date     2021.01.12.09.48.26;  author p4;  state Exp;
+branches ;
+next     1.225750;
+
+1.225750
+date     2021.01.12.09.45.41;  author p4;  state Exp;
+branches ;
+next     1.222449;
+
+1.222449
+date     2020.12.18.15.25.10;  author p4;  state Exp;
+branches ;
+next     1.222418;
+
+1.222418
+date     2020.12.18.14.03.14;  author p4;  state Exp;
+branches ;
+next     1.222402;
+
+1.222402
+date     2020.12.18.13.28.34;  author p4;  state Exp;
+branches ;
+next     1.218296;
+
+1.218296
+date     2020.12.07.17.32.15;  author p4;  state Exp;
+branches ;
+next     1.217301;
+
+1.217301
+date     2020.12.03.12.17.29;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.226231
+log
+@@
+text
+@#include "precomp.h"
+
+
+scene::scene()
+{
+	
+}
+
+scene::~scene()
+{
+	delete[] m_prPrimitives;
+}
+
+void scene::AddPrimitive(primitive& aPrimitive)
+{
+	
+	m_iPrimitiveCounter += 1;
+	
+	if (m_prPrimitives[m_iPrimitiveCounter] == nullptr)
+	{
+		
+		m_prPrimitives[m_iPrimitiveCounter] = &aPrimitive;
+		
+	} else
+	{
+		AddPrimitive(aPrimitive);
+	}
+	
+}
+
+intersectionData& scene::GetIntersection(ray aRay)
+{
+	intersectionData isdTempData{};
+	
+	for (int i = 0; i < m_iPrimitiveCounter; i++)
+	{
+		m_prPrimitives[i]->RayIntersection(aRay, isdTempData);
+	}
+
+	return isdTempData;
+}
+@
+
+
+1.225754
+log
+@@
+text
+@d6 6
+a11 4
+	m_prPrimitives[0] = m_plTestPlane;
+	m_prPrimitives[1] = m_spReflectingTestSphere;
+	m_prPrimitives[2] = m_spShadedTestSphere;
+	m_spShadedTestSphere->m_maObjectMaterial = {{1,1,0}, -1, 1.5};
+@
+
+
+1.225750
+log
+@@
+text
+@d17 1
+a17 1
+	if (m_prPrimitives[m_iPrimitiveCounter] = nullptr)
+@
+
+
+1.222449
+log
+@@
+text
+@d9 1
+a9 1
+	m_spShadedTestSphere->m_maObjectMaterial = {{1,1,0}, 0};
+d14 4
+a17 1
+	for (int i = 0; i < 100; i++)
+d19 6
+a24 4
+		if (m_prPrimitives[i] != nullptr)
+		{
+			m_prPrimitives[i] = &aPrimitive;
+		}
+d26 1
+@
+
+
+1.222418
+log
+@@
+text
+@d7 3
+a9 1
+	m_prPrimitives[1] = m_spTestSphere;
+@
+
+
+1.222402
+log
+@@
+text
+@d23 8
+a30 2
+	intersectionData isdTemp{};
+	return isdTemp;
+@
+
+
+1.218296
+log
+@@
+text
+@d4 7
+a10 1
+void scene::PushPrimitive(primitive& aPrimitive)
+d20 6
+@
+
+
+1.217301
+log
+@@
+text
+@d2 1
+a2 1
+#include "scene.h"
+@

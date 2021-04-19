@@ -1,0 +1,45 @@
+head     1.214816;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.214816
+date     2020.11.26.13.35.38;  author p4;  state Exp;
+branches ;
+next     1.214605;
+
+1.214605
+date     2020.11.25.17.15.45;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.214816
+log
+@@
+text
+@#include "../../include/rendering/ray.h"
+
+ray::ray(point* o, vec3 d)
+{
+	origin = o;
+	direction = d;
+	direction.Normalize();
+}
+@
+
+
+1.214605
+log
+@@
+text
+@d3 1
+a3 1
+ray::ray(point o, vec3 d)
+d7 1
+@

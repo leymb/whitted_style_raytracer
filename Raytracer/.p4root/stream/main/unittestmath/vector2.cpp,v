@@ -1,0 +1,23 @@
+head     1.231265;
+access   ;
+symbols  ;
+locks    ;comment  @@;
+
+
+1.231265
+date     2021.01.22.15.59.18;  author p4;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+1.231265
+log
+@@
+text
+@
+#include "Math/Vector2.h"
+@
