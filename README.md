@@ -1,5 +1,5 @@
 This repository contains my very first and very limited Whitted-style raytracer made for the second Block of my first year (2020) in the CMGT program at BUAS, by Melvin Rother.
-It can render simple primitives and basic refractive Materials and uses interlacing to improve performance. It is, however, limited by a static camera and no caustics.
+It can render simple primitives and basic refractive & reflective Materials and uses interlacing to improve performance. It is, however, limited by a static camera, no caustics and no anti-aliasing.
 
 ![image](https://github.com/user-attachments/assets/1546ae61-9a36-4507-8b2c-34c722c333b8)
 
